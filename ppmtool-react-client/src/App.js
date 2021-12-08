@@ -9,7 +9,7 @@ import AddProject from "./components/Project/AddProject";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="dark-overlay">
         <Header />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/addProject" component={AddProject} />
