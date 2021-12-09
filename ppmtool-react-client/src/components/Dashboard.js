@@ -10,28 +10,31 @@ class Dashboard extends Component {
     this.props.getProjects();
   }
   render() {
-    return (
-      <div className="projects">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1
-                className="display-4 text-center"
-                style={{ color: "#00FF00" }}
-              >
-                Projects
-              </h1>
-              <br />
-              <CreateProjectButton />
+      const { projects } = this.props.project;
+      return (
+        <div className="projects">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <h1
+                  className="display-4 text-center"
+                  style={{ color: "#00FF00" }}
+                >
+                  Projects
+                </h1>
+                <br />
+                <CreateProjectButton />
 
-              <br />
-              <hr />
-              <ProjectItem />
+                <br />
+                <hr />
+                {projects.map((project) => (
+                  <ProjectItem key={project.id} project={project} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
   }
 }
 
