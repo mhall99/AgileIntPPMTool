@@ -95,7 +95,7 @@ public class ProjectTask {
         return projectIdentifier;
     }
 
-    public void setProjectIdentifier(String projectIdentifer) {
+    public void setProjectIdentifier(String projectIdentifier) {
         this.projectIdentifier = projectIdentifier;
     }
 
