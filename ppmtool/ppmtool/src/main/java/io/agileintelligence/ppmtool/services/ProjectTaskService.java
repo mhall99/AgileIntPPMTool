@@ -37,7 +37,7 @@ public class ProjectTaskService {
 		
 		//Add sequence to project task 
 		projectTask.setProjectSequence(projectIdentifier+"-"+BacklogSequence);
-		projectTask.setProjectIdentifer(projectIdentifier);	
+		projectTask.setProjectIdentifier(projectIdentifier);	
 		
 		//initial priority when priority null 
 		
