@@ -50,7 +50,7 @@ public class ProjectService {
 		return project;
 	}
 	
-	public Iterable<Project> fidAllProjects(){
+	public Iterable<Project> findAllProjects(){
 		return projectRepository.findAll();
 	}
 	

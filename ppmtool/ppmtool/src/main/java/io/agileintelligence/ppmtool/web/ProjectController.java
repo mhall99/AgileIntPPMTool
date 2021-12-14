@@ -54,7 +54,7 @@ public class ProjectController {
 	}
 	
 	@GetMapping("/all")
-	public Iterable<Project> getAllProjects(){return projectService.fidAllProjects();}
+	public Iterable<Project> getAllProjects(){return projectService.findAllProjects();}
 	
 	@DeleteMapping("/{projectId}")
 	public ResponseEntity<?> deleteProject(@PathVariable String projectId){
