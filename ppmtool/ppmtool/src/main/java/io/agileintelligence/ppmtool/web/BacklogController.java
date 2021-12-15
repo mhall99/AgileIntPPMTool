@@ -30,8 +30,8 @@ public class BacklogController {
         //show delete
         //custom exception
 
-        ResponseEntity<?> erroMap = mapValidationErrorService.MapValidationService(result);
-        if (erroMap != null) return erroMap;
+        ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
+        if (errorMap != null) return errorMap;
 
         ProjectTask projectTask1 = projectTaskService.addProjectTask(backlog_id, projectTask);
 
@@ -53,6 +53,17 @@ public class BacklogController {
     }
 
 
+    @PatchMapping("/{backlog_id}/{pt_id}")
+    public ResponseEntity<?> updateProjectTask(@Valid @RequestBody ProjectTask projectTask, BindingResult result,
+    		@PathVariable String backlog_id, @PathVariable String pt_id){
+    	 ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
+         if (errorMap != null) return errorMap;
+         
+         ProjectTask updatedTask = projectTaskService.updateByProjectSequence(projectTask, backlog_id, pt_id);
+         
+         return new ResponseEntity<ProjectTask>(updatedTask,HttpStatus.OK);
+         
+    }
 
 
 
