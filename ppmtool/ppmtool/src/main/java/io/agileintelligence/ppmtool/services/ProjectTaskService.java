@@ -114,12 +114,8 @@ public class ProjectTaskService {
     //save update
     
     public void deletePTByProjectSequence(String backlog_id, String pt_id) {
-    	ProjectTask projectTask = findPTByProjectSequence(backlog_id, pt_id);
     	
-    	Backlog backlog = projectTask.getBacklog();
-    	List<ProjectTask> pts = projectTask.getBacklog().getProjectTasks();
-    	pts.remove(projectTask);
-    	backlogRepository.save(backlog);
+    	ProjectTask projectTask = findPTByProjectSequence(backlog_id, pt_id);
     	
     	projectTaskRepository.delete(projectTask);
     }
