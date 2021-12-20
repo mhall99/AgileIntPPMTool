@@ -10,13 +10,14 @@ import store from "./store";
 import UpdateProject from "./components/Project/UpdateProject";
 import ProjectBoard from "./components/ProjectBoard/ProjectBoard";
 import AddProjectTask from "./components/ProjectBoard/ProjectTasks/AddProjectTask";
+import UpdateProjectTask from "./components/ProjectBoard/ProjectTasks/UpdateProjectTask";
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div className="dark-overlay">
+          <div className="App">
             <Header />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/addProject" component={AddProject} />
@@ -27,6 +28,11 @@ class App extends Component {
               path="/addProjectTask/:id"
               component={AddProjectTask}
             />
+            <Route
+              exact
+              path="/updateProjectTask/:backlog_id/:pt_id"
+              component={UpdateProjectTask}
+            />
           </div>
         </Router>
       </Provider>
@@ -35,3 +41,4 @@ class App extends Component {
 }
 
 export default App;
+
