@@ -3,6 +3,8 @@ package io.agileintelligence.ppmtool.domain;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.annotations.Proxy;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
