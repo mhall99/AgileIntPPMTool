@@ -22,6 +22,7 @@ class UpdateProjectTask extends Component {
       dueDate: "",
       projectIdentifier: "",
       create_At: "",
+      errors: {},
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -138,11 +139,16 @@ class UpdateProjectTask extends Component {
                 <div className="form-group">
                   <input
                     type="date"
-                    className="form-control form-control-lg"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.dueDate,
+                    })}
                     name="dueDate"
                     value={this.state.dueDate}
                     onChange={this.onChange}
                   />
+                  {errors.dueDate && (
+                    <div className="invalid-feedback">{errors.dueDate}</div>
+                  )}
                 </div>
                 <div className="form-group">
                   <select
